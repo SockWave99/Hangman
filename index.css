@@ -12,6 +12,10 @@ body {
     
 }
 
+.spaces {
+    font-size: 3rem;
+}
+
 .letters {
     appearance: none;
     border: 0;
@@ -38,4 +42,27 @@ body {
 
 label {
     font-size: 300%;
+}
+
+.winMessage {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .9);
+    justify-content: center;
+    align-items: center;
+    color: antiquewhite;
+    font-size: 3rem;
+    flex-direction: column;
+}
+
+.showBtn {
+    display: flex;
+}
+
+.btn {
+    font-size: 2rem;
 }
