@@ -1,5 +1,6 @@
+let word
 document.getElementById('startBtn').addEventListener('click', () => {
-    let word = document.getElementById('textInput').value.toUpperCase()
+    word = document.getElementById('textInput').value.toUpperCase()
     document.getElementById('start').style.display = 'none'
     let img = document.createElement('img')
     img.id = 'img'
@@ -49,14 +50,10 @@ function createLetters(word) {
                 img.src = 'Hangman images/image' + mistakeCounter  + '.gif'
             } 
             if (mistakeCounter == 6) {
-                document.querySelector('.message').innerText = 'You lost... Your word was:\n'
-                document.querySelector('.word').innerText = word.toLowerCase()
-                document.querySelector('.winMessage').classList.add('showBtn')
+                printMessage('You lost... Your word was:\n')
             }
             if (letterCounter == wordArray.length) {
-                document.querySelector('.message').innerText = 'Congratulations! Your word was:\n'
-                document.querySelector('.word').innerText = word.toLowerCase()
-                document.querySelector('.winMessage').classList.add('showBtn')
+                printMessage('Congratulations! Your word was:\n')
             }
         })
     }
@@ -70,3 +67,10 @@ document.getElementById('resetBtn').addEventListener('click', () => {
     document.getElementById('spaces').remove()
     document.getElementById('lettersDiv').remove()
 })
+
+function printMessage(message) {
+    console.log(message)
+    document.querySelector('.message').innerText = message
+    document.querySelector('.word').innerText = word.toLowerCase()
+    document.querySelector('.winMessage').classList.add('showBtn')
+}
