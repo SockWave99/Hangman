@@ -1,4 +1,5 @@
 let word
+const TOLETTER = 65
 document.getElementById('startBtn').addEventListener('click', () => {
     word = document.getElementById('textInput').value.toUpperCase()
     document.getElementById('start').style.display = 'none'
@@ -29,11 +30,11 @@ function createLetters(word) {
     let wordArray = word.split('')
     let spaces = document.querySelectorAll('.spaces')
     lettersDiv.id = 'lettersDiv'
-    for (let i = 65; i < 91; ++i) {
+    for (let i = 0; i < 26; ++i) {
         let letter = document.createElement('button')
-        letter.innerHTML = String.fromCharCode(i)
+        letter.innerHTML = String.fromCharCode(TOLETTER + i)
         lettersDiv.appendChild(letter)
-        letter.id = i - 65
+        letter.id = i
         letter.className = 'letters'
         let img = document.getElementById('img')
         letter.addEventListener('click', () => {
